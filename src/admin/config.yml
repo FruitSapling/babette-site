@@ -5,9 +5,7 @@ backend:
 media_folder: "src/img"
 public_folder: "/img"
 
-media_library:
-  name: uploadcare
-  config: {}
+media_library: default
 
 collections:
   - name: "projects"
