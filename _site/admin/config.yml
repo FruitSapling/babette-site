@@ -28,3 +28,4 @@ collections:
       - { label: "Tags", name: "tags", widget: "hidden", default: ["projects"] }
       - { label: "Body", name: "body", widget: "markdown" }
 
+
