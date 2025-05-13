@@ -1,0 +1,37 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+  <article class="project-page">
+    <h1>{{ title }}</h1>
+
+    {% if summary %}
+      <p class="summary" style="font-style: italic; color: #555;">{{ summary }}</p>
+    {% endif %}
+
+    {% if gallery and gallery.length > 0 %}
+      <div class="gallery-container" style="position: relative; margin-bottom: 2rem;">
+        <button id="prevBtn" style="position:absolute; left:0; top:50%;">←</button>
+        <img id="galleryImage" src="{{ gallery[0] }}" alt="{{ title }}" style="max-width: 100%; display: block; margin: 0 auto;" />
+        <button id="nextBtn" style="position:absolute; right:0; top:50%;">→</button>
+      </div>
+
+      <script>
+        const images = {{ gallery | safe }};
+        let currentIndex = 0;
+        const img = document.getElementById("galleryImage");
+        document.getElementById("nextBtn").onclick = () => {
+          currentIndex = (currentIndex + 1) % images.length;
+          img.src = images[currentIndex];
+        };
+        document.getElementById("prevBtn").onclick = () => {
+          currentIndex = (currentIndex - 1 + images.length) % images.length;
+          img.src = images[currentIndex];
+        };
+      </script>
+    {% endif %}
+
+    <div class="project-body">
+      {{ content | safe }}
+    </div>
+  </article>
+{% endblock %}
