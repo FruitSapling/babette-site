@@ -14,5 +14,16 @@ collections:
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Summary", name: "summary", widget: "text" }
-      - { label: "Cover Image", name: "cover", widget: "image" }
+      - label: "Gallery"
+        name: "gallery"
+        widget: "list"
+        allow_add: true
+        field:
+          label: "Image"
+          name: "image"
+          widget: "image"
+      - { label: "Layout", name: "layout", widget: "hidden", default: "project.njk" }
+      - { label: "Tags", name: "tags", widget: "hidden", default: ["projects"] }
+      - { label: "Permalink", name: "permalink", widget: "hidden", default: "/projects/{{slug}}/" }
       - { label: "Body", name: "body", widget: "markdown" }
+
