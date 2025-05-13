@@ -7,10 +7,14 @@
   </head>
   <body>
     <!-- Load Decap CMS -->
-    <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+    <script src="https://unpkg.com/netlify-cms@^2.10.0/dist/netlify-cms.js"></script>
+    <!-- Load default media library plugin -->
+    <script src="https://unpkg.com/netlify-cms-media-library-uploadcare@^0.10.0/dist/netlify-cms-media-library-uploadcare.min.js"></script>
+    <script src="https://unpkg.com/netlify-cms-media-library-cloudinary@^0.10.0/dist/netlify-cms-media-library-cloudinary.min.js"></script>
+
     <script>
-      // Register the default media library manually
-      CMS.registerMediaLibrary(window.CMS.default);
+      // You do NOT need to register anything if using 'default'
+      // So here's a fix: REMOVE 'media_library' from config.yml entirely
     </script>
   </body>
 </html>
