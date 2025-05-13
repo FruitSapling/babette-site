@@ -26,6 +26,5 @@ collections:
 
       - { label: "Layout", name: "layout", widget: "hidden", default: "project.njk" }
       - { label: "Tags", name: "tags", widget: "hidden", default: ["projects"] }
-      - { label: "Permalink", name: "permalink", widget: "hidden", default: "/projects/{{slug}}/" }
       - { label: "Body", name: "body", widget: "markdown" }
 

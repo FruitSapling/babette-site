@@ -9,6 +9,6 @@ gallery:
 layout: project.njk
 tags:
   - projects
-permalink: /projects/{{slug}}/
+permalink: /projects/proj-5/
 ---
 p﻿roj 5
