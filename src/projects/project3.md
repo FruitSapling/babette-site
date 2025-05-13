@@ -6,5 +6,4 @@ cover: /img/image3.jpeg
 tags: projects
 permalink: /projects/slow-light/
 ---
-
 This long-exposure experiment uses plant-based emulsions to track changing light conditions across time. Resulted in an abstract short film and stills series.
