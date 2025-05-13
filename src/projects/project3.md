@@ -2,7 +2,7 @@
 layout: layout.njk
 title: Slow Light
 summary: 16mm film exposed by natural light over 30 days.
-cover: https://picsum.photos/seed/worms3/600/400
+cover: /img/image3.jpeg
 tags: projects
 permalink: /projects/slow-light/
 ---

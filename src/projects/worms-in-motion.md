@@ -2,7 +2,7 @@
 layout: layout.njk
 title: Worms in Motion
 summary: A collaborative workshop with soil and film.
-cover: https://picsum.photos/seed/worms2/600/400
+cover: /img/image1.jpeg
 tags: projects
 permalink: /projects/worms-in-motion/
 ---

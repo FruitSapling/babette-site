@@ -2,7 +2,7 @@
 layout: layout.njk
 title: Soil Score
 summary: Mapping decomposition rhythms into sound.
-cover: https://picsum.photos/seed/worms/600/400
+cover: /img/image2.jpeg
 tags: projects
 permalink: /projects/soil-score/
 ---

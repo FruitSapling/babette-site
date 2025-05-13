@@ -1,12 +1,23 @@
 module.exports = function(eleventyConfig) {
-    eleventyConfig.addCollection("projects", function(collectionApi) {
+  // Add 'projects' collection based on Markdown files in /src/projects/
+  eleventyConfig.addCollection("projects", function(collectionApi) {
     return collectionApi.getFilteredByGlob("./src/projects/*.md");
-    });
+  });
+
+  // Copy the admin folder for Decap CMS (Netlify CMS)
+  eleventyConfig.addPassthroughCopy("src/admin");
+
+  // Copy the images folder (or any static assets)
+  eleventyConfig.addPassthroughCopy("src/img");
+
   return {
     dir: {
       input: "src",
       includes: "_includes",
       output: "_site"
-    }
+    },
+    markdownTemplateEngine: "njk",
+    htmlTemplateEngine: "njk",
+    dataTemplateEngine: "njk"
   };
 };
