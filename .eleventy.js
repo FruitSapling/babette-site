@@ -10,6 +10,10 @@ module.exports = function(eleventyConfig) {
   // Copy the images folder (or any static assets)
   eleventyConfig.addPassthroughCopy("src/img");
 
+  // Copy the styles file
+  eleventyConfig.addPassthroughCopy("src/styles.css");
+
+
   return {
     dir: {
       input: "src",

@@ -5,41 +5,57 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{{ title }}</title>
   <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flickity@2/dist/flickity.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/flickity@2/dist/flickity.pkgd.min.js"></script>
+  <style>
+    .gallery {
+      background: #f9f9f9;
+      margin-bottom: 2rem;
+      width: 60vw;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .gallery img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .flickity-button {
+      background: none;
+      border: none;
+      color: #333;
+      font-size: 2rem;
+      transition: color 0.2s;
+    }
+    .flickity-button:hover {
+      color: #000;
+    }
+    .flickity-prev-next-button {
+      width: 44px;
+      height: 44px;
+    }
+  </style>
 </head>
 <body>
   {% include "header.njk" %}
 
   <main>
-    <article class="project-page">
-      <h1>{{ title }}</h1>
+    <article class="project-page" style="max-width: 800px; margin: 0 auto; padding-top: 4rem;">
+      <h1 style="margin-bottom: 0.5rem;">{{ title }}</h1>
 
       {% if summary %}
-        <p class="summary" style="font-style: italic; color: #555;">{{ summary }}</p>
+        <p class="summary" style="font-style: italic; color: #555; margin-bottom: 2rem;">{{ summary }}</p>
       {% endif %}
 
-      {% if gallery %}
-        <div class="gallery-container" style="position: relative; margin-bottom: 2rem;">
-          <button id="prevBtn" style="position:absolute; left:0; top:50%;">←</button>
-          <img id="galleryImage" src="{{ gallery[0] }}" alt="{{ title }}" style="max-width: 100%; display: block; margin: 0 auto;" />
-          <button id="nextBtn" style="position:absolute; right:0; top:50%;">→</button>
+      {% if gallery and gallery.length > 0 %}
+        <div class="gallery js-flickity" data-flickity='{ "wrapAround": true, "pageDots": false, "cellAlign": "center", "contain": true }'>
+          {% for image in gallery %}
+            <img src="{{ image }}" alt="{{ title }} image {{ loop.index }}" />
+          {% endfor %}
         </div>
-
-        <script>
-          const images = {{ gallery | safe }};
-          let currentIndex = 0;
-          const img = document.getElementById("galleryImage");
-          document.getElementById("nextBtn").onclick = () => {
-            currentIndex = (currentIndex + 1) % images.length;
-            img.src = images[currentIndex];
-          };
-          document.getElementById("prevBtn").onclick = () => {
-            currentIndex = (currentIndex - 1 + images.length) % images.length;
-            img.src = images[currentIndex];
-          };
-        </script>
       {% endif %}
 
-      <div class="project-body">
+      <div class="project-body" style="margin-top: 2rem;">
         {{ content | safe }}
       </div>
     </article>
