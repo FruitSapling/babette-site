@@ -1,0 +1,21 @@
+---
+layout: layout.njk
+title: Home
+---
+
+<section class="hero">
+  <img src="/img/image3.jpeg" alt="Hero Image" class="distorted" />
+</section>
+
+<div class="work-grid">
+  {% for project in collections.projects %}
+    <a class="card" href="{{ project.url }}">
+      {% if project.data.gallery and project.data.gallery.length > 0 %}
+        <img src="{{ project.data.gallery[0] }}" alt="{{ project.data.title }}">
+      {% endif %}
+      <h2>{{ project.data.title }}</h2>
+      <p>{{ project.data.summary }}</p>
+    </a>
+
+  {% endfor %}
+</div>

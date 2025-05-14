@@ -46,48 +46,56 @@
       }
     }
 
-.work-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
-  max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
-}
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
-.card {
-  display: block;
-  text-decoration: none;
-  color: inherit;
-  border: 1px solid #ddd;
-  padding: 1rem;
-  background-color: white;
-  transition: box-shadow 0.2s ease;
-}
+    .card {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      border: 1px solid #ddd;
+      padding: 1rem;
+      background-color: white;
+      transition: box-shadow 0.2s ease;
+    }
 
-.card:hover {
-  box-shadow: 0 0 8px rgba(0,0,0,0.1);
-}
+    .card:hover {
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
 
-.card img {
-  width: 100%;
-  height: auto;
-  margin-bottom: 1rem;
-  object-fit: cover;
-}
+    .card img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 1rem;
+      object-fit: cover;
+    }
 
-.card h2 {
-  font-size: 1.1rem;
-  margin: 0 0 0.5rem;
-}
+    .card h2 {
+      font-size: 1.1rem;
+      margin: 0 0 0.5rem;
+    }
 
-.card p {
-  margin: 0;
-  font-size: 0.95rem;
-  color: #444;
-}
+    .card p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: #444;
+    }
 
+    .distorted {
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: url(#distortionFilter);
+      transform: rotate(90deg);
+      transform-origin: center center;
+    }
 
   </style>
 </head>
@@ -122,8 +130,10 @@
   
     <a class="card" href="/projects/worms-in-motion/">
       
+        <img src="/img/image2.jpeg" alt="Worms in Motion">
+      
       <h2>Worms in Motion</h2>
-      <p>A collaborative workshop with soil and film.</p>
+      <p>An exploration into worms</p>
     </a>
 
   
@@ -141,15 +151,6 @@
     </a>
 
   
-    <a class="card" href="/projects/project-4/">
-      
-        <img src="/img/image3.jpeg" alt="project 4">
-      
-      <h2>project 4</h2>
-      <p>project 4 summary</p>
-    </a>
-
-  
     <a class="card" href="/projects/proj-5/">
       
         <img src="/img/image1.jpeg" alt="proj 5">
@@ -159,12 +160,45 @@
     </a>
 
   
+    <a class="card" href="/projects/project-4/">
+      
+        <img src="/img/image3.jpeg" alt="project 4">
+      
+      <h2>project 4</h2>
+      <p>project 4 summary</p>
+    </a>
+
+  
 </div>
   </main>
 
   <footer>
     <p>&copy; Babette 2025</p>
   </footer>
+
+  <svg style="display: none;">
+    <filter id="distortionFilter">
+      <feTurbulence id="turbulence" type="turbulence" baseFrequency="0.02" numOctaves="2" result="turbulence" />
+      <feDisplacementMap in2="turbulence" in="SourceGraphic" scale="10" xChannelSelector="R" yChannelSelector="G" />
+    </filter>
+  </svg>
+
+  <script>
+    // Animate baseFrequency to create a moving distortion effect
+    const turbulence = document.getElementById('turbulence');
+    let frames = 0;
+
+    function animateDistortion() {
+      const bfX = 0.02 + 0.002 * Math.sin(frames * 0.01);
+      const bfY = 0.02 + 0.002 * Math.cos(frames * 0.01);
+      turbulence.setAttribute('baseFrequency', `${bfX} ${bfY}`);
+      frames++;
+      requestAnimationFrame(animateDistortion);
+    }
+
+    animateDistortion();
+  </script>
+
 </body>
 </html>
 
