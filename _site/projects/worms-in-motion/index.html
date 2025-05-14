@@ -4,154 +4,59 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Worms in Motion</title>
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      background-color: #fff;
-      color: #111;
-      font-family: 'Georgia', serif;
-      font-size: 1rem;
-      line-height: 1.6;
-    }
-
-    header, footer {
-      padding: 2rem;
-      text-align: center;
-    }
-
-    nav a {
-      margin: 0 1rem;
-      text-decoration: none;
-      color: inherit;
-      font-size: 0.9rem;
-      letter-spacing: 0.5px;
-    }
-
-    main {
-      padding: 4rem 2rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    footer p {
-      font-size: 0.85rem;
-      color: #555;
-    }
-
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 1.75rem;
-      }
-    }
-
-    .work-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-      max-width: 1000px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .card {
-      display: block;
-      text-decoration: none;
-      color: inherit;
-      border: 1px solid #ddd;
-      padding: 1rem;
-      background-color: white;
-      transition: box-shadow 0.2s ease;
-    }
-
-    .card:hover {
-      box-shadow: 0 0 8px rgba(0,0,0,0.1);
-    }
-
-    .card img {
-      width: 100%;
-      height: auto;
-      margin-bottom: 1rem;
-      object-fit: cover;
-    }
-
-    .card h2 {
-      font-size: 1.1rem;
-      margin: 0 0 0.5rem;
-    }
-
-    .card p {
-      margin: 0;
-      font-size: 0.95rem;
-      color: #444;
-    }
-
-    .distorted {
-      width: 100%;
-      height: auto;
-      display: block;
-      filter: url(#distortionFilter);
-      transform: rotate(90deg);
-      transform-origin: center center;
-    }
-  </style>
+  <link rel="stylesheet" href="/styles.css" />
 </head>
-
 <body>
   <header>
-    <h1>Babette</h1>
-    <nav>
-      <a href="/">Home</a>
-      <a href="/work/">Work</a>
-      <a href="/about/">About</a>
-      <a href="/contact-cv/">Contact & CV</a>
-    </nav>
-  </header>
+  <h1>Babette</h1>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/work/">Work</a>
+    <a href="/about/">About</a>
+    <a href="/contact-cv/">Contact & CV</a>
+  </nav>
+</header>
 
   <main>
-    <p>Worms in motion are amazing.</p>
+    <article class="project-page">
+      <h1>Worms in Motion</h1>
 
+      
+        <p class="summary" style="font-style: italic; color: #555;">An exploration into worms</p>
+      
+
+      
+        <div class="gallery-container" style="position: relative; margin-bottom: 2rem;">
+          <button id="prevBtn" style="position:absolute; left:0; top:50%;">←</button>
+          <img id="galleryImage" src="/img/image2.jpeg" alt="Worms in Motion" style="max-width: 100%; display: block; margin: 0 auto;" />
+          <button id="nextBtn" style="position:absolute; right:0; top:50%;">→</button>
+        </div>
+
+        <script>
+          const images = /img/image2.jpeg,/img/image1.jpeg,/img/image3.jpeg,/img/image4.png;
+          let currentIndex = 0;
+          const img = document.getElementById("galleryImage");
+          document.getElementById("nextBtn").onclick = () => {
+            currentIndex = (currentIndex + 1) % images.length;
+            img.src = images[currentIndex];
+          };
+          document.getElementById("prevBtn").onclick = () => {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            img.src = images[currentIndex];
+          };
+        </script>
+      
+
+      <div class="project-body">
+        <p>Worms in motion are amazing.</p>
+
+      </div>
+    </article>
   </main>
 
   <footer>
-    <p>&copy; Babette 2025</p>
-  </footer>
+  <p>&copy; Babette 2025</p>
+</footer>
 
-  <svg style="display: none;">
-    <filter id="distortionFilter">
-      <feTurbulence id="turbulence" type="turbulence" baseFrequency="0.02" numOctaves="2" result="turbulence" />
-      <feDisplacementMap in2="turbulence" in="SourceGraphic" scale="10" xChannelSelector="R" yChannelSelector="G" />
-    </filter>
-  </svg>
-
-  <script>
-    const turbulence = document.getElementById('turbulence');
-    let frames = 0;
-
-    function animateDistortion() {
-      const bfX = 0.02 + 0.002 * Math.sin(frames * 0.01);
-      const bfY = 0.02 + 0.002 * Math.cos(frames * 0.01);
-      turbulence.setAttribute('baseFrequency', `${bfX} ${bfY}`);
-      frames++;
-      requestAnimationFrame(animateDistortion);
-    }
-
-    animateDistortion();
-  </script>
-
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  <script>
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on("init", user => {
-        if (!user) {
-          window.netlifyIdentity.on("login", () => {
-            document.location.href = "/admin/";
-          });
-        }
-      });
-    }
-  </script>
 </body>
 </html>

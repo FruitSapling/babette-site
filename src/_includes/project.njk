@@ -1,43 +1,50 @@
-{% extends "layout.njk" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ title }}</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  {% include "header.njk" %}
 
-{% block content %}
-  <article class="project-page">
-    <h1>{{ title }}</h1>
+  <main>
+    <article class="project-page">
+      <h1>{{ title }}</h1>
 
-    <pre>{{ title | dump }}</pre>
-    <pre>{{ summary | dump }}</pre>
-    <pre>{{ gallery | dump }}</pre>
-    <pre>{{ content | safe }}</pre>
-    
+      {% if summary %}
+        <p class="summary" style="font-style: italic; color: #555;">{{ summary }}</p>
+      {% endif %}
 
-    {% if summary %}
-      <p class="summary" style="font-style: italic; color: #555;">{{ summary }}</p>
-    {% endif %}
+      {% if gallery %}
+        <div class="gallery-container" style="position: relative; margin-bottom: 2rem;">
+          <button id="prevBtn" style="position:absolute; left:0; top:50%;">←</button>
+          <img id="galleryImage" src="{{ gallery[0] }}" alt="{{ title }}" style="max-width: 100%; display: block; margin: 0 auto;" />
+          <button id="nextBtn" style="position:absolute; right:0; top:50%;">→</button>
+        </div>
 
-    {% if gallery and gallery.length > 0 %}
-      <div class="gallery-container" style="position: relative; margin-bottom: 2rem;">
-        <button id="prevBtn" style="position:absolute; left:0; top:50%;">←</button>
-        <img id="galleryImage" src="{{ gallery[0] }}" alt="{{ title }}" style="max-width: 100%; display: block; margin: 0 auto;" />
-        <button id="nextBtn" style="position:absolute; right:0; top:50%;">→</button>
+        <script>
+          const images = {{ gallery | safe }};
+          let currentIndex = 0;
+          const img = document.getElementById("galleryImage");
+          document.getElementById("nextBtn").onclick = () => {
+            currentIndex = (currentIndex + 1) % images.length;
+            img.src = images[currentIndex];
+          };
+          document.getElementById("prevBtn").onclick = () => {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            img.src = images[currentIndex];
+          };
+        </script>
+      {% endif %}
+
+      <div class="project-body">
+        {{ content | safe }}
       </div>
+    </article>
+  </main>
 
-      <script>
-        const images = {{ gallery | safe }};
-        let currentIndex = 0;
-        const img = document.getElementById("galleryImage");
-        document.getElementById("nextBtn").onclick = () => {
-          currentIndex = (currentIndex + 1) % images.length;
-          img.src = images[currentIndex];
-        };
-        document.getElementById("prevBtn").onclick = () => {
-          currentIndex = (currentIndex - 1 + images.length) % images.length;
-          img.src = images[currentIndex];
-        };
-      </script>
-    {% endif %}
-
-    <div class="project-body">
-      {{ content | safe }}
-    </div>
-  </article>
-{% endblock %}
+  {% include "footer.njk" %}
+</body>
+</html>
