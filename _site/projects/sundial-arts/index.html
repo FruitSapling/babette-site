@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sundial Arts</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header>
+  <h1>Babette</h1>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/work/">Work</a>
+    <a href="/about/">About</a>
+    <a href="/contact-cv/">Contact & CV</a>
+  </nav>
+</header>
+
+  <main>
+    <article class="project-page">
+      <h1>Sundial Arts</h1>
+
+      
+        <p class="summary" style="font-style: italic; color: #555;">Community arts initiative to nourish connections between people and nature.</p>
+      
+
+      
+        <div class="gallery-container" style="position: relative; margin-bottom: 2rem;">
+          <button id="prevBtn" style="position:absolute; left:0; top:50%;">←</button>
+          <img id="galleryImage" src="/img/looking-at-everyday-life.jpeg" alt="Sundial Arts" style="max-width: 100%; display: block; margin: 0 auto;" />
+          <button id="nextBtn" style="position:absolute; right:0; top:50%;">→</button>
+        </div>
+
+        <script>
+          const images = /img/looking-at-everyday-life.jpeg;
+          let currentIndex = 0;
+          const img = document.getElementById("galleryImage");
+          document.getElementById("nextBtn").onclick = () => {
+            currentIndex = (currentIndex + 1) % images.length;
+            img.src = images[currentIndex];
+          };
+          document.getElementById("prevBtn").onclick = () => {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            img.src = images[currentIndex];
+          };
+        </script>
+      
+
+      <div class="project-body">
+        <p>Sundial Arts is a community arts initiative led by artists William Kennedy and Babette van Gerwen to nourish connections between people and everyday nature in London.  We offer free or low-cost workshops and events that centre on play, learning, experimentation and collaboration. We incorporate reflection and engaged contact with nature based on research of the pathways to nature connectedness. Our aim is to provide opportunities for people of all backgrounds to access their creativity and feel more connected to nature in urban spaces.</p>
+<p>Our regular workshops are Art in the Park and Art Club.</p>
+<p>Art in the Park runs for 10 weeks during the summer months, and Art Club runs regularly in autumn, winter and spring.</p>
+<p>Both these workshops are held at St Margaret’s House, a community Arts and Wellbeing Centre in Bethnal Green, and supported by Arts Council England. Art in the Park is funded by Action for Bow.</p>
+
+      </div>
+    </article>
+  </main>
+
+  <footer>
+  <p>&copy; Babette 2025</p>
+</footer>
+
+</body>
+</html>
