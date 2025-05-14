@@ -4,6 +4,12 @@
   <article class="project-page">
     <h1>{{ title }}</h1>
 
+    <pre>{{ title | dump }}</pre>
+    <pre>{{ summary | dump }}</pre>
+    <pre>{{ gallery | dump }}</pre>
+    <pre>{{ content | safe }}</pre>
+    
+
     {% if summary %}
       <p class="summary" style="font-style: italic; color: #555;">{{ summary }}</p>
     {% endif %}

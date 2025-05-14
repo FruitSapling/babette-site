@@ -96,22 +96,8 @@
       transform: rotate(90deg);
       transform-origin: center center;
     }
-
   </style>
 </head>
-
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-<script>
-  if (window.netlifyIdentity) {
-    window.netlifyIdentity.on("init", user => {
-      if (!user) {
-        window.netlifyIdentity.on("login", () => {
-          document.location.href = "/admin/";
-        });
-      }
-    });
-  }
-</script>
 
 <body>
   <header>
@@ -125,8 +111,10 @@
   </header>
 
   <main>
+    <!-- CONTENT BLOCK START -->
     <p>p﻿roj 5</p>
 
+    <!-- CONTENT BLOCK END -->
   </main>
 
   <footer>
@@ -141,7 +129,6 @@
   </svg>
 
   <script>
-    // Animate baseFrequency to create a moving distortion effect
     const turbulence = document.getElementById('turbulence');
     let frames = 0;
 
@@ -156,6 +143,17 @@
     animateDistortion();
   </script>
 
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
 </body>
 </html>
-

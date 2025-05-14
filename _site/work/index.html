@@ -96,22 +96,8 @@
       transform: rotate(90deg);
       transform-origin: center center;
     }
-
   </style>
 </head>
-
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-<script>
-  if (window.netlifyIdentity) {
-    window.netlifyIdentity.on("init", user => {
-      if (!user) {
-        window.netlifyIdentity.on("login", () => {
-          document.location.href = "/admin/";
-        });
-      }
-    });
-  }
-</script>
 
 <body>
   <header>
@@ -135,41 +121,17 @@
       <h2>Worms in Motion</h2>
       <p>An exploration into worms</p>
     </a>
-
   
-    <a class="card" href="/projects/soil-score/">
+    <a class="card" href="/projects/morms-in-dotion/">
       
-      <h2>Soil Score</h2>
-      <p>Mapping decomposition rhythms into sound.</p>
+        <img src="/img/image1.jpeg" alt="Morms in Dotion">
+      
+      <h2>Morms in Dotion</h2>
+      <p>An exploration into Morms</p>
     </a>
-
-  
-    <a class="card" href="/projects/slow-light/">
-      
-      <h2>Slow Light</h2>
-      <p>16mm film exposed by natural light over 30 days.</p>
-    </a>
-
-  
-    <a class="card" href="/projects/proj-5/">
-      
-        <img src="/img/image1.jpeg" alt="proj 5">
-      
-      <h2>proj 5</h2>
-      <p>proj 5</p>
-    </a>
-
-  
-    <a class="card" href="/projects/project-4/">
-      
-        <img src="/img/image3.jpeg" alt="project 4">
-      
-      <h2>project 4</h2>
-      <p>project 4 summary</p>
-    </a>
-
   
 </div>
+
   </main>
 
   <footer>
@@ -184,7 +146,6 @@
   </svg>
 
   <script>
-    // Animate baseFrequency to create a moving distortion effect
     const turbulence = document.getElementById('turbulence');
     let frames = 0;
 
@@ -199,6 +160,17 @@
     animateDistortion();
   </script>
 
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
 </body>
 </html>
-
