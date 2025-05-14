@@ -1,6 +1,8 @@
 ---
 title: Sundial Arts
 summary: Community arts initiative to nourish connections between people and nature.
+gallery:
+  - /img/looking-at-everyday-life.jpeg
 layout: project.njk
 tags:
   - projects
