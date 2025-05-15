@@ -2,8 +2,8 @@
 title: Landscapes with Will
 summary: Lorem ipsum.
 gallery:
-  - /img/schiermonnikoog-2023-oil-on-canvas-80x60cm-£690-william-kennedy-and-babette-van-gerwen.png
   - /img/leaf-season-2022.jpg
+  - /img/schiermonnikoog-2023-oil-on-canvas-80x60cm-£690-william-kennedy-and-babette-van-gerwen.png
   - /img/richmond-park-with-will-2024.png
   - /img/river-rock-drawing-will-.jpg
   - /img/float-painting-n1-w-b-canvas.jpg
