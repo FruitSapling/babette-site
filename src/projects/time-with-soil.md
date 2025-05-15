@@ -2,10 +2,10 @@
 title: Time with Soil
 summary: Lorem ipsum dolor sit amet.
 gallery:
+  - /img/decomposing-2.png
   - /img/worms-close-up-2.png
   - /img/soil-painting.png
   - /img/worms-close-up-1.png
-  - /img/decomposing-2.png
 layout: project.njk
 tags:
   - projects
