@@ -11,6 +11,11 @@
 <body>
   <header class="site-header">
   <a href="/" class="logo">Babette van Gerwen</a>
+  <button class="burger-menu" aria-label="Toggle navigation">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
   <nav class="main-nav">
     <a href="/work/">Work</a>
     <a href="/contact-cv/">Contact & CV</a>
@@ -74,8 +79,16 @@
     </filter>
   </svg>
 
+  <svg style="display: none;">
+    <filter id="distortionFilterWeak">
+      <feTurbulence id="turbulenceWeak" type="turbulence" baseFrequency="0.01" numOctaves="1" result="turbulence" />
+      <feDisplacementMap in2="turbulence" in="SourceGraphic" scale="5" xChannelSelector="R" yChannelSelector="G" />
+    </filter>
+  </svg>
+
   <script>
     const turbulence = document.getElementById('turbulence');
+    const turbulenceWeak = document.getElementById('turbulenceWeak');
     let frames = 0;
 
     function animateDistortion() {
@@ -86,7 +99,26 @@
       requestAnimationFrame(animateDistortion);
     }
 
+    function animateDistortionWeak() {
+      const bfX = 0.01 + 0.001 * Math.sin(frames * 0.01);
+      const bfY = 0.01 + 0.001 * Math.cos(frames * 0.01);
+      turbulenceWeak.setAttribute('baseFrequency', `${bfX} ${bfY}`);
+      frames++;
+      requestAnimationFrame(animateDistortionWeak);
+    }
+
     animateDistortion();
+    animateDistortionWeak();
+  </script>
+
+  <script>
+    const burgerMenu = document.querySelector('.burger-menu');
+    const mainNav = document.querySelector('.main-nav');
+
+    burgerMenu.addEventListener('click', () => {
+      mainNav.classList.toggle('active');
+      burgerMenu.classList.toggle('open');
+    });
   </script>
 
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>

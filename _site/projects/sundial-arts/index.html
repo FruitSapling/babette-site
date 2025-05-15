@@ -11,6 +11,11 @@
 <body>
   <header class="site-header">
   <a href="/" class="logo">Babette van Gerwen</a>
+  <button class="burger-menu" aria-label="Toggle navigation">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
   <nav class="main-nav">
     <a href="/work/">Work</a>
     <a href="/contact-cv/">Contact & CV</a>
@@ -43,15 +48,17 @@
     
 
     <article class="project-page">
-      <div class="project-grid">
-        <div class="project-title">
-          <h1>Sundial Arts</h1>
+      <div class="project-columns">
+        <!-- Column 1: Title and Description -->
+        <div class="project-column">
+          <h1 class="project-title">Sundial Arts</h1>
+          
+            <p class="project-summary">Community arts initiative to nourish connections between people and nature.</p>
+          
         </div>
 
-        <div class="project-text">
-          
-            <p class="summary">Community arts initiative to nourish connections between people and nature.</p>
-          
+        <!-- Column 2: Project Text -->
+        <div class="project-column">
           <div class="project-body">
             <p>Sundial Arts is a community arts initiative led by artists William Kennedy and Babette van Gerwen to nourish connections between people and everyday nature in London.  We offer free or low-cost workshops and events that centre on play, learning, experimentation and collaboration. We incorporate reflection and engaged contact with nature based on research of the pathways to nature connectedness. Our aim is to provide opportunities for people of all backgrounds to access their creativity and feel more connected to nature in urban spaces.</p>
 <p>Our regular workshops are Art in the Park and Art Club.</p>
