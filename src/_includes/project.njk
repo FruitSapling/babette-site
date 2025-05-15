@@ -40,26 +40,33 @@
   {% include "header.njk" %}
 
   <main>
-    <article class="project-page" style="max-width: 800px; margin: 0 auto; padding-top: 4rem;">
-      <h1 style="margin-bottom: 0.5rem;">{{ title }}</h1>
-
-      {% if summary %}
-        <p class="summary" style="font-style: italic; color: #555; margin-bottom: 2rem;">{{ summary }}</p>
-      {% endif %}
-
-      {% if gallery and gallery.length > 0 %}
-        <div class="gallery js-flickity" data-flickity='{ "wrapAround": true, "pageDots": false, "cellAlign": "center", "contain": true }'>
-          {% for image in gallery %}
-            <img src="{{ image }}" alt="{{ title }} image {{ loop.index }}" />
-          {% endfor %}
-        </div>
-      {% endif %}
-
-      <div class="project-body" style="margin-top: 2rem;">
-        {{ content | safe }}
+  {% if gallery and gallery.length > 0 %}
+    <div class="gallery-container">
+      <div class="gallery js-flickity" data-flickity='{ "wrapAround": true, "pageDots": false, "cellAlign": "center", "contain": true }'>
+        {% for image in gallery %}
+          <img src="{{ image }}" alt="{{ title }} image {{ loop.index }}" />
+        {% endfor %}
       </div>
-    </article>
-  </main>
+    </div>
+  {% endif %}
+
+  <article class="project-page">
+    <div class="project-grid">
+      <div class="project-title">
+        <h1>{{ title }}</h1>
+      </div>
+
+      <div class="project-text">
+        {% if summary %}
+          <p class="summary">{{ summary }}</p>
+        {% endif %}
+        <div class="project-body">
+          {{ content | safe }}
+        </div>
+      </div>
+    </div>
+  </article>
+</main>
 
   {% include "footer.njk" %}
 </body>
