@@ -126,7 +126,7 @@ main {
 
 /* === GALLERY === */
 .gallery-container {
-  max-height: 60vh;
+  max-height: 50vh;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -138,7 +138,6 @@ main {
 
 .gallery {
   width: 100%;
-  max-width: 600px;
   background: transparent; /* Ensure the gallery itself has no background */
   padding: 0 2rem;
   overflow: hidden; /* Hide any overflow from adjacent images */

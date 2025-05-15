@@ -22,7 +22,9 @@
           "imagesLoaded": true, 
           "groupCells": false, 
           "selectedAttraction": 0.075, 
-          "friction": 0.9 
+          "friction": 0.9 {% if gallery.length > 1 %},
+          "prevNextButtons": true{% else %},
+          "prevNextButtons": false{% endif %}
         }'>
           {% for image in gallery %}
             <div class="gallery-cell">
