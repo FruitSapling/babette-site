@@ -5,6 +5,10 @@ backend:
 media_folder: "src/img"
 public_folder: "/img"
 
+media_library:
+  config:
+    multiple: true # Enable multiple file uploads
+
 collections:
   - name: "projects"
     label: "Projects"
