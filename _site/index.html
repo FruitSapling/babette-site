@@ -83,16 +83,9 @@
     </filter>
   </svg>
 
-  <svg style="display: none;">
-    <filter id="distortionFilterWeak">
-      <feTurbulence id="turbulenceWeak" type="turbulence" baseFrequency="0.01" numOctaves="1" result="turbulence" />
-      <feDisplacementMap in2="turbulence" in="SourceGraphic" scale="5" xChannelSelector="R" yChannelSelector="G" />
-    </filter>
-  </svg>
 
   <script>
     const turbulence = document.getElementById('turbulence');
-    const turbulenceWeak = document.getElementById('turbulenceWeak');
     let frames = 0;
 
     function animateDistortion() {
@@ -103,16 +96,7 @@
       requestAnimationFrame(animateDistortion);
     }
 
-    function animateDistortionWeak() {
-      const bfX = 0.01 + 0.001 * Math.sin(frames * 0.01);
-      const bfY = 0.01 + 0.001 * Math.cos(frames * 0.01);
-      turbulenceWeak.setAttribute('baseFrequency', `${bfX} ${bfY}`);
-      frames++;
-      requestAnimationFrame(animateDistortionWeak);
-    }
-
     animateDistortion();
-    animateDistortionWeak();
   </script>
 
   <script>
