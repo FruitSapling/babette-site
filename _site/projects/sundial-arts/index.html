@@ -7,34 +7,6 @@
   <link rel="stylesheet" href="/styles.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flickity@2/dist/flickity.min.css">
   <script src="https://cdn.jsdelivr.net/npm/flickity@2/dist/flickity.pkgd.min.js"></script>
-  <style>
-    .gallery {
-      background: #f9f9f9;
-      margin-bottom: 2rem;
-      width: 60vw;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .gallery img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-    .flickity-button {
-      background: none;
-      border: none;
-      color: #333;
-      font-size: 2rem;
-      transition: color 0.2s;
-    }
-    .flickity-button:hover {
-      color: #000;
-    }
-    .flickity-prev-next-button {
-      width: 44px;
-      height: 44px;
-    }
-  </style>
 </head>
 <body>
   <header class="site-header">
@@ -48,37 +20,48 @@
 
 
   <main>
-  
-    <div class="gallery-container">
-      <div class="gallery js-flickity" data-flickity='{ "wrapAround": true, "pageDots": false, "cellAlign": "center", "contain": true }'>
-        
-          <img src="/img/looking-at-everyday-life.jpeg" alt="Sundial Arts image 1" />
-        
+    
+      <div class="gallery-container">
+        <div class="gallery js-flickity" data-flickity='{ 
+          "wrapAround": true, 
+          "pageDots": true, 
+          "cellAlign": "center", 
+          "contain": false, 
+          "imagesLoaded": true, 
+          "groupCells": false, 
+          "selectedAttraction": 0.075, 
+          "friction": 0.9 
+        }'>
+          
+            <div class="gallery-cell">
+              <img src="/img/looking-at-everyday-life.jpeg" alt="Sundial Arts image 1" />
+            </div>
+          
+        </div>
       </div>
-    </div>
-  
+    
 
-  <article class="project-page">
-    <div class="project-grid">
-      <div class="project-title">
-        <h1>Sundial Arts</h1>
-      </div>
+    <article class="project-page">
+      <div class="project-grid">
+        <div class="project-title">
+          <h1>Sundial Arts</h1>
+        </div>
 
-      <div class="project-text">
-        
-          <p class="summary">Community arts initiative to nourish connections between people and nature.</p>
-        
-        <div class="project-body">
-          <p>Sundial Arts is a community arts initiative led by artists William Kennedy and Babette van Gerwen to nourish connections between people and everyday nature in London.  We offer free or low-cost workshops and events that centre on play, learning, experimentation and collaboration. We incorporate reflection and engaged contact with nature based on research of the pathways to nature connectedness. Our aim is to provide opportunities for people of all backgrounds to access their creativity and feel more connected to nature in urban spaces.</p>
+        <div class="project-text">
+          
+            <p class="summary">Community arts initiative to nourish connections between people and nature.</p>
+          
+          <div class="project-body">
+            <p>Sundial Arts is a community arts initiative led by artists William Kennedy and Babette van Gerwen to nourish connections between people and everyday nature in London.  We offer free or low-cost workshops and events that centre on play, learning, experimentation and collaboration. We incorporate reflection and engaged contact with nature based on research of the pathways to nature connectedness. Our aim is to provide opportunities for people of all backgrounds to access their creativity and feel more connected to nature in urban spaces.</p>
 <p>Our regular workshops are Art in the Park and Art Club.</p>
 <p>Art in the Park runs for 10 weeks during the summer months, and Art Club runs regularly in autumn, winter and spring.</p>
 <p>Both these workshops are held at St Margaret’s House, a community Arts and Wellbeing Centre in Bethnal Green, and supported by Arts Council England. Art in the Park is funded by Action for Bow.</p>
 
+          </div>
         </div>
       </div>
-    </div>
-  </article>
-</main>
+    </article>
+  </main>
 
   <footer>
   <p>&copy; Babette 2025</p>

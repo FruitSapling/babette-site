@@ -7,66 +7,49 @@
   <link rel="stylesheet" href="/styles.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flickity@2/dist/flickity.min.css">
   <script src="https://cdn.jsdelivr.net/npm/flickity@2/dist/flickity.pkgd.min.js"></script>
-  <style>
-    .gallery {
-      background: #f9f9f9;
-      margin-bottom: 2rem;
-      width: 60vw;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .gallery img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-    .flickity-button {
-      background: none;
-      border: none;
-      color: #333;
-      font-size: 2rem;
-      transition: color 0.2s;
-    }
-    .flickity-button:hover {
-      color: #000;
-    }
-    .flickity-prev-next-button {
-      width: 44px;
-      height: 44px;
-    }
-  </style>
 </head>
 <body>
   {% include "header.njk" %}
 
   <main>
-  {% if gallery and gallery.length > 0 %}
-    <div class="gallery-container">
-      <div class="gallery js-flickity" data-flickity='{ "wrapAround": true, "pageDots": false, "cellAlign": "center", "contain": true }'>
-        {% for image in gallery %}
-          <img src="{{ image }}" alt="{{ title }} image {{ loop.index }}" />
-        {% endfor %}
-      </div>
-    </div>
-  {% endif %}
-
-  <article class="project-page">
-    <div class="project-grid">
-      <div class="project-title">
-        <h1>{{ title }}</h1>
-      </div>
-
-      <div class="project-text">
-        {% if summary %}
-          <p class="summary">{{ summary }}</p>
-        {% endif %}
-        <div class="project-body">
-          {{ content | safe }}
+    {% if gallery and gallery.length > 0 %}
+      <div class="gallery-container">
+        <div class="gallery js-flickity" data-flickity='{ 
+          "wrapAround": true, 
+          "pageDots": true, 
+          "cellAlign": "center", 
+          "contain": false, 
+          "imagesLoaded": true, 
+          "groupCells": false, 
+          "selectedAttraction": 0.075, 
+          "friction": 0.9 
+        }'>
+          {% for image in gallery %}
+            <div class="gallery-cell">
+              <img src="{{ image }}" alt="{{ title }} image {{ loop.index }}" />
+            </div>
+          {% endfor %}
         </div>
       </div>
-    </div>
-  </article>
-</main>
+    {% endif %}
+
+    <article class="project-page">
+      <div class="project-grid">
+        <div class="project-title">
+          <h1>{{ title }}</h1>
+        </div>
+
+        <div class="project-text">
+          {% if summary %}
+            <p class="summary">{{ summary }}</p>
+          {% endif %}
+          <div class="project-body">
+            {{ content | safe }}
+          </div>
+        </div>
+      </div>
+    </article>
+  </main>
 
   {% include "footer.njk" %}
 </body>

@@ -22,7 +22,6 @@ html, body {
   border-bottom: none;
 }
 
-
 .logo {
   position: absolute;
   left: 2rem;
@@ -40,7 +39,7 @@ html, body {
 }
 
 .main-nav a {
-  /* text-transform: uppercase; */
+  text-transform: uppercase;
   text-decoration: none;
   font-size: 0.85rem;
   color: inherit;
@@ -125,6 +124,71 @@ main {
   color: #444;
 }
 
+/* === GALLERY === */
+.gallery-container {
+  max-height: 60vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin: 4rem 0 2rem 0;
+  background: transparent; /* Ensure the background is transparent */
+}
+
+.gallery {
+  width: 100%;
+  max-width: 600px;
+  background: transparent; /* Ensure the gallery itself has no background */
+  padding: 0 2rem;
+  overflow: hidden; /* Hide any overflow from adjacent images */
+}
+
+.gallery .flickity-slider {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.gallery-cell {
+  width: 100%; /* Each cell takes up the full width of the gallery */
+  flex: 0 0 auto; /* Prevent cells from shrinking or growing */
+}
+
+.gallery img {
+  max-height: 60vh;
+  width: 100%; /* Ensure the image fills the gallery cell */
+  height: auto;
+  max-width: 100%;
+  display: block;
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+/* Flickity button styling */
+.flickity-button {
+  background: none;
+  border: none;
+  color: #333;
+  font-size: 2rem;
+  transition: color 0.2s;
+}
+
+.flickity-button:hover {
+  color: #000;
+}
+
+.flickity-prev-next-button {
+  width: 44px;
+  height: 44px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery:hover .flickity-prev-next-button {
+  opacity: 1;
+}
+
 /* === DISTORTION IMAGE === */
 .distorted {
   width: 100%;
@@ -157,4 +221,14 @@ main {
   .main-nav a {
     margin-left: 0;
   }
+
+  .gallery {
+    padding: 0 1rem;
+  }
+
+  .gallery img {
+    max-height: 50vh;
+  }
 }
+
+
