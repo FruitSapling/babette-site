@@ -3,6 +3,8 @@ title: Sundial Arts
 summary: Community arts initiative to nourish connections between people and nature.
 gallery:
   - /img/looking-at-everyday-life.jpeg
+  - /img/art-in-the-park-2024-1-1-.jpeg
+  - /img/what-we-notice-exhibition-3-1-.jpeg
 layout: project.njk
 tags:
   - projects
