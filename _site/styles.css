@@ -1,8 +1,8 @@
 html, body {
   margin: 0;
   padding: 0;
-  background-color: #fff;
-  color: #111;
+  color: #3e2f24;
+  background-color: #d9e8df;
   font-family: 'Georgia', serif;
   font-size: 1rem;
   line-height: 1.6;
@@ -16,8 +16,6 @@ html, body {
   align-items: center;
   padding: 2rem 0;
   font-family: 'Georgia', serif;
-  background-color: #fff;
-  color: #111;
   text-align: center;
   border-bottom: none;
 }
@@ -26,7 +24,7 @@ html, body {
   position: absolute;
   left: 2rem;
   top: 2rem;
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: normal;
   text-decoration: none;
   color: inherit;
@@ -39,9 +37,8 @@ html, body {
 }
 
 .main-nav a {
-  text-transform: uppercase;
   text-decoration: none;
-  font-size: 0.85rem;
+  font-size: 1.2rem;
   color: inherit;
   letter-spacing: 0.5px;
   position: relative;
@@ -83,7 +80,7 @@ main {
 /* === WORK GRID === */
 .work-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(2, 1fr); /* 2 columns by default */
   gap: 2rem;
   margin-top: 2rem;
   max-width: 1000px;
@@ -91,14 +88,18 @@ main {
   margin-right: auto;
 }
 
+@media (max-width: 600px) {
+  .work-grid {
+    grid-template-columns: 1fr; /* 1 column on mobile */
+  }
+}
+
 /* === PROJECT CARDS === */
 .card {
   display: block;
   text-decoration: none;
   color: inherit;
-  border: 1px solid #ddd;
   padding: 1rem;
-  background-color: white;
   transition: box-shadow 0.2s ease;
 }
 
@@ -107,10 +108,11 @@ main {
 }
 
 .card img {
-  width: 100%;
-  height: auto;
-  margin-bottom: 1rem;
-  object-fit: cover;
+  width: auto; /* Allow the width to adjust based on the aspect ratio */
+  height: 30vh; /* Set the height to 30% of the viewport */
+  margin: 0 auto 1rem; /* Center the image horizontally and add bottom margin */
+  object-fit: contain; /* Ensure the image fits without cropping */
+  display: block; /* Ensure proper alignment */
 }
 
 .card h2 {
@@ -122,6 +124,12 @@ main {
   margin: 0;
   font-size: 0.95rem;
   color: #444;
+}
+
+.card-title {
+  font-size: 1.1rem;
+  font-weight: normal; /* Make the title text non-bold */
+  margin: 0 0 0.5rem;
 }
 
 /* === GALLERY === */

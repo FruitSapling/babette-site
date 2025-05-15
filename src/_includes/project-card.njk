@@ -1,9 +1,10 @@
 <a class="card" href="{{ project.url }}">
   <div class="card-thumb">
-    <img src="{{ project.data.cover }}" alt="{{ project.data.title }}" />
+    {% if project.data.gallery and project.data.gallery.length > 0 %}
+      <img src="{{ project.data.gallery[0] }}" alt="{{ project.data.title }}" />
+    {% endif %}
   </div>
   <div class="card-text">
-    <h2>{{ project.data.title }}</h2>
-    <p>{{ project.data.summary }}</p>
+    <h2 class="card-title">{{ project.data.title }}</h2>
   </div>
 </a>
