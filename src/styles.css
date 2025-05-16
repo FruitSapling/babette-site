@@ -260,56 +260,51 @@ main {
   }
 }
 
-/* === ABOUT PAGE === */
-.about-columns {
+
+/* === CONTACT CV === */
+.contact-cv-columns {
   display: grid;
-  grid-template-columns: 1fr 2fr; /* Contact on left, main on right */
+  grid-template-columns: 1fr 2fr;
   gap: 4rem;
   max-width: 1200px;
   margin: 3rem auto;
   padding: 0 4rem;
 }
 
-.about-main {
-  font-size: 1.1rem;
-}
-
-.about-side {
+.contact-cv-side {
   background: none !important;
   padding-left: 0 !important;
   box-shadow: none;
-  border-radius: 8px;
-  padding: 2rem 1.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  font-size: 1.05rem;
 }
 
-.about-contact a {
+.contact-cv-contact a {
   color: #3e2f24;
   word-break: break-all;
   font-weight: bold;
   text-decoration: underline;
 }
 
-.about-list {
+.contact-cv-main {
+  font-size: 1.1rem;
+}
+
+.contact-cv-list {
   list-style: none;
   padding: 0;
   margin: 0 0 1.5rem 0;
 }
 
-.about-list li {
+.contact-cv-list li {
   margin-bottom: 0.5rem;
 }
 
 @media (max-width: 900px) {
-  .about-columns {
+  .contact-cv-columns {
     grid-template-columns: 1fr;
     gap: 2rem;
     padding: 0 1rem;
   }
-  .about-side {
+  .contact-cv-side {
     margin-top: 0;
     width: 100%;
     margin-bottom: 2rem;
