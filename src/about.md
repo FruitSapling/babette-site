@@ -11,10 +11,6 @@ title: About
     </div>
   </aside>
   <div class="about-main">
-    <h2>About</h2>
-    <p>
-      I'm Babette, I do X Y Z
-    </p>
     <h3>Education</h3>
     <ul class="about-list">
       <li><strong>2019-2020</strong><br>MSc Environmental Technology, Imperial College London</li>
