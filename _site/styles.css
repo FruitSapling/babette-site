@@ -137,6 +137,12 @@ main {
   margin: 0 0 0.5rem;
 }
 
+.card-thumb {
+  border-bottom: 1px solid rgba(62, 47, 36, 0.1); /* Subtle line using foreground colour */
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
 /* === GALLERY === */
 .gallery-container {
   max-height: 50vh;
