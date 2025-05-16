@@ -2,10 +2,10 @@
 title: Reflections (on Regent's Canal)
 summary: Lorem ipsum
 gallery:
+  - /img/moon-on-the-canal-2024-video-babette-van-gerwen-and-william-kennedy.jpg
   - /img/canal-painting-1-on-show-at-hartslane-.jpeg
   - /img/canal-painting-close-2024-.jpg
   - /img/canal-painting-2-2024-.jpg
-  - /img/moon-on-the-canal-2024-video-babette-van-gerwen-and-william-kennedy.jpg
 layout: project.njk
 tags:
   - projects
