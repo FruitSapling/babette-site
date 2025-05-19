@@ -366,7 +366,7 @@ main {
 
 @media (max-width: 600px) {
   main {
-    padding: 2rem 0rem;
+    padding: 2rem 2rem;
   }
 }
 
@@ -381,7 +381,7 @@ main {
 
   .logo {
     position: static; /* Remove absolute positioning */
-    font-size: 1rem; /* Scale down the logo font size */
+    font-size: 1.4rem; /* Scale down the logo font size */
     margin-bottom: 0.5rem;
   }
 
