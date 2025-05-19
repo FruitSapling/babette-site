@@ -13,6 +13,9 @@ module.exports = function(eleventyConfig) {
   // Copy the styles file
   eleventyConfig.addPassthroughCopy("src/styles.css");
 
+  // Copy the JS file
+  eleventyConfig.addPassthroughCopy("src/js");
+
 
   return {
     dir: {
