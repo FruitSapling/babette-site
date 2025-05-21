@@ -396,6 +396,11 @@ main {
   main {
     padding: 2rem 0rem;
   }
+
+  .hero
+  .hero-text {
+    padding: 0rem 4rem;
+  }
 }
 
 @media (max-width: 600px) {
