@@ -93,11 +93,39 @@ main {
   padding: 0 1rem; /* Add horizontal padding for mobile */
 }
 
+@media (max-width: 1000px) {
+  .work-grid {
+    grid-template-columns: 1fr; /* 1 column for projects on screens <1000px */
+    max-width: 100%;
+    padding: 0 6rem;
+  }
+  main {
+    padding: 2rem 0.5rem;
+  }
+
+  .logo {
+    font-size: 1.4rem; /* Scale down the logo font size */
+  }
+
+  .work-grid,
+  .hero,
+  .hero-text {
+    padding-left: 3rem;
+    padding-right: 3rem;
+    box-sizing: border-box;
+  }
+}
+
 @media (max-width: 600px) {
   .work-grid {
-    grid-template-columns: 1fr; /* 1 column on mobile */
-    max-width: 100%;
-    padding: 0 0.5rem;
+    padding: 0 .5rem;
+  }
+
+  .hero,
+  .hero-text {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    box-sizing: border-box;
   }
 }
 
@@ -165,8 +193,18 @@ main {
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  margin: 4rem 0 2rem 0;
+  margin: 2rem 0 1rem 0; /* Reduce vertical margin */
   background: transparent; /* Ensure the background is transparent */
+}
+
+@media (max-width: 600px) {
+  .gallery-container {
+    max-height: 35vh;      /* Allow gallery to shrink more */
+    margin: 1rem 0 0.5rem 0; /* Less space above and below */
+  }
+  .gallery {
+    padding: 0 0.5rem;
+  }
 }
 
 .gallery {
@@ -420,7 +458,7 @@ main {
 }
 
 /* Show burger menu on small screens */
-@media (max-width: 600px) {
+@media (max-width: 740px) {
   .burger-menu {
     display: flex;
     position: absolute;
