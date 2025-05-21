@@ -254,14 +254,8 @@ main {
   width: 100%;
   height: auto;
   display: block;
-  filter: url('#distortionFilter');
+  filter: url(#distortionFilter);
   transform-origin: center center;
-}
-
-@media (max-width: 600px) {
-  .distorted {
-    filter: url('/#distortionFilter');
-  }
 }
 
 /* === PROJECT PAGE === */
@@ -520,5 +514,40 @@ main {
   line-height: 1.6;
   text-align: left;
 }
+
+.worm {
+  position: absolute;
+  bottom: 4px;          /* just above the bottom edge of the header */
+  left: -70px;          /* start just off the left edge */
+  width: 70px;          /* smaller worm */
+  pointer-events: none; /* purely decorative */
+  z-index: 1000;
+  transform-origin: center center;
+  animation:
+    headerWormSlide 60s linear infinite,
+    wormWriggle    1s  ease-in-out infinite alternate;
+}
+
+/* horizontal crawl + little random vertical motions */
+@keyframes headerWormSlide {
+  0%   { transform: translateX(0)       translateY( 0px); }
+  15%  { transform: translateX(15vw)    translateY(-3px); }
+  30%  { transform: translateX(30vw)    translateY( 4px); }
+  45%  { transform: translateX(45vw)    translateY(-2px); }
+  60%  { transform: translateX(60vw)    translateY( 5px); }
+  75%  { transform: translateX(75vw)    translateY(-4px); }
+  90%  { transform: translateX(90vw)    translateY( 2px); }
+  100% { transform: translateX(calc(100% + 70px)) translateY(0px); }
+}
+
+/* a gentle back-and-forth rotation to mimic wriggling */
+@keyframes wormWriggle {
+  0%   { rotate:  5deg; }
+  50%  { rotate: -5deg; }
+  100% { rotate:  5deg; }
+}
+
+
+
 
 
