@@ -254,8 +254,14 @@ main {
   width: 100%;
   height: auto;
   display: block;
-  filter: url(#distortionFilter);
+  filter: url('#distortionFilter');
   transform-origin: center center;
+}
+
+@media (max-width: 600px) {
+  .distorted {
+    filter: url('/#distortionFilter');
+  }
 }
 
 /* === PROJECT PAGE === */
