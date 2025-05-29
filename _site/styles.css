@@ -3,7 +3,7 @@ html, body {
   padding: 0;
   color: #3e2f24;
   background-color: #d9e8df;
-  font-family: 'Georgia', serif;
+  font-family: 'Georgia', sans-serif;
   font-size: 1rem;
   line-height: 1.6;
   overflow-x: hidden;
@@ -161,9 +161,12 @@ main {
   transform: scale(1.03); /* Slightly scale up the image when hovering over the card */
 }
 
+.card-title,
 .card h2 {
   font-size: 1.1rem;
-  margin: 0 0 0.5rem;
+  font-weight: 600;    /* Medium weight between normal and bold */
+  margin: 0 0 0.5rem 0;
+  text-align: right;
 }
 
 .card p {
@@ -172,17 +175,10 @@ main {
   color: #444;
 }
 
-.card-title {
-  font-size: 1.1rem;
-  font-weight: normal; /* Make the title text non-bold */
-  margin: 0 0 0.5rem;
-  text-align: center;
-}
-
 .card-thumb {
-  border-bottom: 1px solid rgba(62, 47, 36, 0.1); /* Subtle line using foreground colour */
-  margin-bottom: 0.5rem;
-  padding-bottom: 0.5rem;
+  border-bottom: none; /* Remove the grey line */
+  margin-bottom: 0;    /* Remove extra space */
+  padding-bottom: 0;
 }
 
 /* === GALLERY === */
