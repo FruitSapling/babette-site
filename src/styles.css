@@ -190,14 +190,12 @@ main {
 
 /* === GALLERY === */
 .gallery-container {
-  max-height: 50vh;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
-  margin: 1.5rem 0 1.5rem 0; /* Reduced top and bottom margin */
-  background: transparent; /* Ensure the background is transparent */
+  margin: 1.5rem 0;
+  background: transparent;
 }
 
 .gallery {
@@ -231,6 +229,7 @@ main {
   max-height: 60vh;
   width: 100%;
   display: block;
+  object-fit: contain;
 }
 
 /* Flickity button styling */
@@ -400,6 +399,7 @@ main {
   }
   .gallery video {
     max-height: 50vh;
+    object-fit: contain;
   }
 }
 

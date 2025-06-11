@@ -6,6 +6,13 @@ document.addEventListener('DOMContentLoaded', function() {
   flkty.on('change', function() {
     galleryElem.querySelectorAll('video').forEach(function(video) {
       video.pause();
+      video.currentTime = 0;
     });
+  });
+  flkty.on('select', function() {
+    var selected = galleryElem.querySelector('.gallery-cell.is-selected video');
+    if (selected) {
+      selected.play();
+    }
   });
 });

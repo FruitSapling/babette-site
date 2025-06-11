@@ -1,11 +1,14 @@
 <a class="card" href="{{ project.url }}">
   <div class="card-thumb">
   {% if project.data.gallery and project.data.gallery.length > 0 %}
-    {% set first = project.data.gallery[0] %}
-    {% if first.type == 'video' %}
-      <video controls src="{{ first.src }}"></video>
-    {% else %}
-      <img src="{{ first.src or first }}" alt="{{ project.data.title }}" />
+    {% set thumb = null %}
+    {% for media in project.data.gallery %}
+      {% if media.type != 'video' and not thumb %}
+        {% set thumb = media %}
+      {% endif %}
+    {% endfor %}
+    {% if thumb %}
+      <img src="{{ thumb.src or thumb }}" alt="{{ project.data.title }}" />
     {% endif %}
   {% endif %}
   </div>
