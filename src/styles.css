@@ -220,6 +220,11 @@ main {
   object-fit: contain;
   margin: 0 auto;
 }
+.gallery video {
+  max-height: 60vh;
+  width: 100%;
+  display: block;
+}
 
 /* Flickity button styling */
 .flickity-button {
@@ -384,6 +389,9 @@ main {
   }
 
   .gallery img {
+    max-height: 50vh;
+  }
+  .gallery video {
     max-height: 50vh;
   }
 }

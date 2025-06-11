@@ -34,7 +34,7 @@
     <a class="card" href="/projects/landscapes-with-will/">
   <div class="card-thumb">
     
-      <img src="/img/leaf-season-2022.jpg" alt="Landscapes with Will" />
+      <img src="[object Object]" alt="Landscapes with Will" />
     
   </div>
   <div class="card-text">
@@ -43,10 +43,22 @@
 </a>
 
   
+    <a class="card" href="/projects/reflections-on-regents-canal/">
+  <div class="card-thumb">
+    
+      <img src="[object Object]" alt="Reflections (on Regent&#39;s Canal)" />
+    
+  </div>
+  <div class="card-text">
+    <h2 class="card-title">Reflections (on Regent&#39;s Canal)</h2>
+  </div>
+</a>
+
+  
     <a class="card" href="/projects/sundial-arts/">
   <div class="card-thumb">
     
-      <img src="/img/looking-at-everyday-life.jpeg" alt="Sundial Arts" />
+      <img src="[object Object]" alt="Sundial Arts" />
     
   </div>
   <div class="card-text">
@@ -58,23 +70,11 @@
     <a class="card" href="/projects/time-with-soil/">
   <div class="card-thumb">
     
-      <img src="/img/decomposing-2.png" alt="Time with Soil" />
+      <img src="[object Object]" alt="Time with Soil" />
     
   </div>
   <div class="card-text">
     <h2 class="card-title">Time with Soil</h2>
-  </div>
-</a>
-
-  
-    <a class="card" href="/projects/reflections-on-regents-canal/">
-  <div class="card-thumb">
-    
-      <img src="/img/moon-on-the-canal-2024-video-babette-van-gerwen-and-william-kennedy.jpg" alt="Reflections (on Regent&#39;s Canal)" />
-    
-  </div>
-  <div class="card-text">
-    <h2 class="card-title">Reflections (on Regent&#39;s Canal)</h2>
   </div>
 </a>
 
@@ -84,45 +84,45 @@
   </main>
 
   <footer>
-    <p>&copy; Babette van Gerwen 2025</p>
-  </footer>
+  <p>&copy; Babette van Gerwen 2025</p>
+</footer>
 
-  <svg style="display: none;">
-    <filter id="distortionFilter">
-      <feTurbulence id="turbulence" type="turbulence" baseFrequency="0.02" numOctaves="2" result="turbulence" />
-      <feDisplacementMap in2="turbulence" in="SourceGraphic" scale="10" xChannelSelector="R" yChannelSelector="G" />
-    </filter>
-  </svg>
+<svg style="display: none;">
+  <filter id="distortionFilter">
+    <feTurbulence id="turbulence" type="turbulence" baseFrequency="0.02" numOctaves="2" result="turbulence" />
+    <feDisplacementMap in2="turbulence" in="SourceGraphic" scale="10" xChannelSelector="R" yChannelSelector="G" />
+  </filter>
+</svg>
 
+<script>
+  const turbulence = document.getElementById('turbulence');
+  let frames = 0;
 
-  <script>
-    const turbulence = document.getElementById('turbulence');
-    let frames = 0;
+  function animateDistortion() {
+    const bfX = 0.02 + 0.002 * Math.sin(frames * 0.01);
+    const bfY = 0.02 + 0.002 * Math.cos(frames * 0.01);
+    turbulence.setAttribute('baseFrequency', `${bfX} ${bfY}`);
+    frames++;
+    requestAnimationFrame(animateDistortion);
+  }
 
-    function animateDistortion() {
-      const bfX = 0.02 + 0.002 * Math.sin(frames * 0.01);
-      const bfY = 0.02 + 0.002 * Math.cos(frames * 0.01);
-      turbulence.setAttribute('baseFrequency', `${bfX} ${bfY}`);
-      frames++;
-      requestAnimationFrame(animateDistortion);
-    }
+  animateDistortion();
+</script>
 
-    animateDistortion();
-  </script>
+<script src="/js/burger.js"></script>
 
-  <script src="/js/burger.js"></script>
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
 
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  <script>
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on("init", user => {
-        if (!user) {
-          window.netlifyIdentity.on("login", () => {
-            document.location.href = "/admin/";
-          });
-        }
-      });
-    }
-  </script>
 </body>
 </html>

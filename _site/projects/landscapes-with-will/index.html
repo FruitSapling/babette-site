@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/flickity@2/dist/flickity.pkgd.min.js"></script>
   <script src="/js/burger.js"></script>
+  <script src="/js/gallery.js"></script>
 </head>
 <body>
   <header class="site-header">
@@ -45,35 +46,51 @@
         }'>
           
             <div class="gallery-cell">
-              <img src="/img/leaf-season-2022.jpg" alt="Landscapes with Will image 1" />
+              
+                <img src="/img/leaf-season-2022.jpg" alt="Landscapes with Will image 1" />
+              
             </div>
           
             <div class="gallery-cell">
-              <img src="/img/schiermonnikoog-2023-oil-on-canvas-80x60cm-£690-william-kennedy-and-babette-van-gerwen.png" alt="Landscapes with Will image 2" />
+              
+                <img src="/img/schiermonnikoog-2023-oil-on-canvas-80x60cm-£690-william-kennedy-and-babette-van-gerwen.png" alt="Landscapes with Will image 2" />
+              
             </div>
           
             <div class="gallery-cell">
-              <img src="/img/richmond-park-with-will-2024.png" alt="Landscapes with Will image 3" />
+              
+                <img src="/img/richmond-park-with-will-2024.png" alt="Landscapes with Will image 3" />
+              
             </div>
           
             <div class="gallery-cell">
-              <img src="/img/river-rock-drawing-will-.jpg" alt="Landscapes with Will image 4" />
+              
+                <img src="/img/river-rock-drawing-will-.jpg" alt="Landscapes with Will image 4" />
+              
             </div>
           
             <div class="gallery-cell">
-              <img src="/img/float-painting-n1-w-b-canvas.jpg" alt="Landscapes with Will image 5" />
+              
+                <img src="/img/float-painting-n1-w-b-canvas.jpg" alt="Landscapes with Will image 5" />
+              
             </div>
           
             <div class="gallery-cell">
-              <img src="/img/moss-painting-2024-oil-on-jute-canvas-50-x-45-cm-william-kennedy-and-babette-van-gerwen-.jpeg" alt="Landscapes with Will image 6" />
+              
+                <img src="/img/moss-painting-2024-oil-on-jute-canvas-50-x-45-cm-william-kennedy-and-babette-van-gerwen-.jpeg" alt="Landscapes with Will image 6" />
+              
             </div>
           
             <div class="gallery-cell">
-              <img src="/img/celebration-of-moss-2024.jpg" alt="Landscapes with Will image 7" />
+              
+                <img src="/img/celebration-of-moss-2024.jpg" alt="Landscapes with Will image 7" />
+              
             </div>
           
             <div class="gallery-cell">
-              <img src="/img/river-rock-drawing-babette-.jpg" alt="Landscapes with Will image 8" />
+              
+                <img src="/img/river-rock-drawing-babette-.jpg" alt="Landscapes with Will image 8" />
+              
             </div>
           
         </div>
@@ -104,6 +121,43 @@
   <footer>
   <p>&copy; Babette van Gerwen 2025</p>
 </footer>
+
+<svg style="display: none;">
+  <filter id="distortionFilter">
+    <feTurbulence id="turbulence" type="turbulence" baseFrequency="0.02" numOctaves="2" result="turbulence" />
+    <feDisplacementMap in2="turbulence" in="SourceGraphic" scale="10" xChannelSelector="R" yChannelSelector="G" />
+  </filter>
+</svg>
+
+<script>
+  const turbulence = document.getElementById('turbulence');
+  let frames = 0;
+
+  function animateDistortion() {
+    const bfX = 0.02 + 0.002 * Math.sin(frames * 0.01);
+    const bfY = 0.02 + 0.002 * Math.cos(frames * 0.01);
+    turbulence.setAttribute('baseFrequency', `${bfX} ${bfY}`);
+    frames++;
+    requestAnimationFrame(animateDistortion);
+  }
+
+  animateDistortion();
+</script>
+
+<script src="/js/burger.js"></script>
+
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
 
 </body>
 </html>
