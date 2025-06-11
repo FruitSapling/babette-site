@@ -1,8 +1,13 @@
 <a class="card" href="{{ project.url }}">
   <div class="card-thumb">
-    {% if project.data.gallery and project.data.gallery.length > 0 %}
-      <img src="{{ project.data.gallery[0] }}" alt="{{ project.data.title }}" />
+  {% if project.data.gallery and project.data.gallery.length > 0 %}
+    {% set first = project.data.gallery[0] %}
+    {% if first.type == 'video' %}
+      <video controls src="{{ first.src }}"></video>
+    {% else %}
+      <img src="{{ first.src or first }}" alt="{{ project.data.title }}" />
     {% endif %}
+  {% endif %}
   </div>
   <div class="card-text">
     <h2 class="card-title">{{ project.data.title }}</h2>
