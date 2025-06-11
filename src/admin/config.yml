@@ -19,10 +19,9 @@ collections:
         name: "gallery"
         widget: "list"
         allow_add: true
-        field:
-          label: "Image"
-          name: ""
-          widget: "image"
+        fields:
+          - { label: "Type", name: "type", widget: "select", options: ["image", "video"], default: "image" }
+          - { label: "File", name: "src", widget: "file" }
 
       - { label: "Layout", name: "layout", widget: "hidden", default: "project.njk" }
       - { label: "Tags", name: "tags", widget: "hidden", default: ["projects"] }
