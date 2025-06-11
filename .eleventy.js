@@ -16,6 +16,9 @@ module.exports = function(eleventyConfig) {
   // Copy the JS file
   eleventyConfig.addPassthroughCopy("src/js");
 
+  // Copy uploaded videos
+  eleventyConfig.addPassthroughCopy("src/video");
+
 
   return {
     dir: {
