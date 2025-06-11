@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/flickity@2/dist/flickity.pkgd.min.js"></script>
   <script src="/js/burger.js"></script>
+  <script src="/js/gallery.js"></script>
 </head>
 <body>
   {% include "header.njk" %}
@@ -28,9 +29,13 @@
           "prevNextButtons": true{% else %},
           "prevNextButtons": false{% endif %}
         }'>
-          {% for image in gallery %}
+          {% for media in gallery %}
             <div class="gallery-cell">
-              <img src="{{ image }}" alt="{{ title }} image {{ loop.index }}" />
+              {% if media.type == 'video' %}
+                <video controls src="{{ media.src }}"></video>
+              {% else %}
+                <img src="{{ media.src or media }}" alt="{{ title }} image {{ loop.index }}" />
+              {% endif %}
             </div>
           {% endfor %}
         </div>

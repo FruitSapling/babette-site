@@ -2,14 +2,22 @@
 title: Landscapes with Will
 summary: Lorem ipsum.
 gallery:
-  - /img/leaf-season-2022.jpg
-  - /img/schiermonnikoog-2023-oil-on-canvas-80x60cm-£690-william-kennedy-and-babette-van-gerwen.png
-  - /img/richmond-park-with-will-2024.png
-  - /img/river-rock-drawing-will-.jpg
-  - /img/float-painting-n1-w-b-canvas.jpg
-  - /img/moss-painting-2024-oil-on-jute-canvas-50-x-45-cm-william-kennedy-and-babette-van-gerwen-.jpeg
-  - /img/celebration-of-moss-2024.jpg
-  - /img/river-rock-drawing-babette-.jpg
+  - type: image
+    src: /img/leaf-season-2022.jpg
+  - type: image
+    src: /img/schiermonnikoog-2023-oil-on-canvas-80x60cm-£690-william-kennedy-and-babette-van-gerwen.png
+  - type: image
+    src: /img/richmond-park-with-will-2024.png
+  - type: image
+    src: /img/river-rock-drawing-will-.jpg
+  - type: image
+    src: /img/float-painting-n1-w-b-canvas.jpg
+  - type: image
+    src: /img/moss-painting-2024-oil-on-jute-canvas-50-x-45-cm-william-kennedy-and-babette-van-gerwen-.jpeg
+  - type: image
+    src: /img/celebration-of-moss-2024.jpg
+  - type: image
+    src: /img/river-rock-drawing-babette-.jpg
 layout: project.njk
 tags:
   - projects
