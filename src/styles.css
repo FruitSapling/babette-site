@@ -73,7 +73,7 @@ footer p {
 
 /* === MAIN === */
 main {
-  padding: 4rem 2rem;
+  padding: 2rem 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -187,7 +187,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 1.5rem 0;
+  margin: 0 0 1.5rem 0;
   background: transparent; /* Ensure the background is transparent */
 }
 
@@ -239,6 +239,14 @@ main {
 
 .gallery:hover .flickity-prev-next-button {
   opacity: 1;
+}
+
+.is-fullscreen .flickity-prev-next-button {
+  opacity: 1;
+}
+
+.flickity-fullscreen-button {
+  display: none;
 }
 
 /* === DISTORTION IMAGE === */
@@ -397,7 +405,7 @@ main {
 
 @media (max-width: 600px) {
   .gallery-container {
-    margin: 1rem 0 1rem 0;
+    margin: 0 0 1rem 0;
   }
 }
 
