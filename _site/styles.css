@@ -191,6 +191,7 @@ main {
   margin: 1.5rem 0; /* Reduced top and bottom margin */
   background: transparent; /* Ensure the background is transparent */
   max-height: 66vh; /* Limit gallery height to two-thirds of viewport */
+  position: relative; /* Anchor fullscreen controls */
 }
 
 .gallery {
@@ -255,6 +256,64 @@ main {
 
 .gallery:hover .flickity-prev-next-button {
   opacity: 1;
+}
+
+/* Fullscreen gallery styles */
+.gallery-container.fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  margin: 0;
+  max-height: none;
+  z-index: 1000;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gallery-container.fullscreen .gallery {
+  padding: 0 2rem;
+}
+
+.gallery-container.fullscreen .gallery img {
+  width: auto;
+  height: auto;
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+}
+
+.exit-fullscreen {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 2rem;
+  color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: none;
+  z-index: 1001;
+}
+
+.gallery-container.fullscreen .exit-fullscreen {
+  display: block;
+}
+
+.gallery-container.fullscreen .flickity-button {
+  color: #fff;
+}
+
+body.gallery-fullscreen .worm {
+  display: none;
+}
+
+body.gallery-fullscreen .site-header {
+  display: none;
 }
 
 
