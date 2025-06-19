@@ -8,7 +8,6 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flickity@2/dist/flickity.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/flickity@2/dist/flickity.pkgd.min.js"></script>
-  <script src="/js/burger.js"></script>
 </head>
 <body>
   <header class="site-header">
@@ -37,9 +36,9 @@
           "pageDots": true, 
           "cellAlign": "center", 
           "contain": false, 
-          "imagesLoaded": true, 
-          "groupCells": false, 
-          "selectedAttraction": 0.075, 
+          "imagesLoaded": true,
+          "groupCells": false,
+          "selectedAttraction": 0.075,
           "friction": 0.9 ,
           "prevNextButtons": true
         }'>
@@ -60,6 +59,10 @@
               <img src="/img/worms-close-up-1.png" alt="Time with Soil image 4" />
             </div>
           
+            <div class="gallery-cell">
+              <img src="/img/worm-soup-with-anya.jpg" alt="Time with Soil image 5" />
+            </div>
+          
         </div>
       </div>
     
@@ -70,14 +73,14 @@
         <div class="project-column">
           <h1 class="project-title">Time with Soil</h1>
           
-            <p class="project-summary">Lorem ipsum dolor sit amet.</p>
+            <p class="project-summary">i dont have one</p>
           
         </div>
 
         <!-- Column 2: Project Text -->
         <div class="project-column">
           <div class="project-body">
-            <p>T﻿ime with soil. Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>T﻿ime with soil. Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. yeeeeeees</p>
 
           </div>
         </div>
@@ -88,6 +91,43 @@
   <footer>
   <p>&copy; Babette van Gerwen 2025</p>
 </footer>
+
+<svg style="display: none;">
+  <filter id="distortionFilter">
+    <feTurbulence id="turbulence" type="turbulence" baseFrequency="0.02" numOctaves="2" result="turbulence" />
+    <feDisplacementMap in2="turbulence" in="SourceGraphic" scale="10" xChannelSelector="R" yChannelSelector="G" />
+  </filter>
+</svg>
+
+<script>
+  const turbulence = document.getElementById('turbulence');
+  let frames = 0;
+
+  function animateDistortion() {
+    const bfX = 0.02 + 0.002 * Math.sin(frames * 0.01);
+    const bfY = 0.02 + 0.002 * Math.cos(frames * 0.01);
+    turbulence.setAttribute('baseFrequency', `${bfX} ${bfY}`);
+    frames++;
+    requestAnimationFrame(animateDistortion);
+  }
+
+  animateDistortion();
+</script>
+
+<script src="/js/burger.js"></script>
+
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
 
 </body>
 </html>
