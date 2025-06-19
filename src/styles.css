@@ -73,7 +73,7 @@ footer p {
 
 /* === MAIN === */
 main {
-  padding: 2rem 2rem;
+  padding: 4rem 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -183,11 +183,13 @@ main {
 
 /* === GALLERY === */
 .gallery-container {
+  max-height: 50vh;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 0 1.5rem 0;
+  overflow: hidden;
+  margin: 1.5rem 0 1.5rem 0; /* Reduced top and bottom margin */
   background: transparent; /* Ensure the background is transparent */
 }
 
@@ -195,6 +197,7 @@ main {
   width: 100%;
   background: transparent; /* Ensure the gallery itself has no background */
   padding: 0 2rem;
+  overflow: hidden; /* Hide any overflow from adjacent images */
 }
 
 .gallery .flickity-slider {
@@ -209,9 +212,10 @@ main {
 }
 
 .gallery img {
-  width: auto;
-  max-width: 100%;
+  max-height: 60vh;
+  width: 100%; /* Ensure the image fills the gallery cell */
   height: auto;
+  max-width: 100%;
   display: block;
   object-fit: contain;
   margin: 0 auto;
@@ -247,6 +251,10 @@ main {
 
 .flickity-fullscreen-button {
   display: none;
+}
+
+.is-fullscreen .flickity-fullscreen-button {
+  display: block;
 }
 
 /* === DISTORTION IMAGE === */
@@ -388,7 +396,7 @@ main {
   }
 
   .gallery img {
-    max-height: none;
+    max-height: 50vh;
   }
 }
 
@@ -405,7 +413,7 @@ main {
 
 @media (max-width: 600px) {
   .gallery-container {
-    margin: 0 0 1rem 0;
+    margin: 1rem 0 1rem 0;
   }
 }
 
