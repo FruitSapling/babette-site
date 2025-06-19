@@ -210,7 +210,6 @@ main {
 }
 
 .gallery img {
-  max-height: 60vh;
   width: auto;
   height: auto;
   max-width: 100%;
