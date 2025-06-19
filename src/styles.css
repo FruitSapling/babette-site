@@ -191,6 +191,7 @@ main {
   margin: 1.5rem 0; /* Reduced top and bottom margin */
   background: transparent; /* Ensure the background is transparent */
   max-height: 66vh; /* Limit gallery height to two-thirds of viewport */
+  position: relative; /* Anchor fullscreen controls */
 }
 
 .gallery {
@@ -308,6 +309,10 @@ main {
 }
 
 body.gallery-fullscreen .worm {
+  display: none;
+}
+
+body.gallery-fullscreen .site-header {
   display: none;
 }
 
