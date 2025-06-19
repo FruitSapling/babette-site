@@ -255,25 +255,6 @@ main {
   opacity: 1;
 }
 
-.is-fullscreen .flickity-prev-next-button {
-  opacity: 1;
-}
-
-.flickity-fullscreen-button {
-  display: none;
-}
-
-.is-fullscreen .flickity-fullscreen-button {
-  display: block;
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  z-index: 110;
-}
-
-.is-fullscreen .flickity-fullscreen-button .flickity-button-icon {
-  transform: rotate(45deg);
-}
 
 /* === DISTORTION IMAGE === */
 .distorted {
