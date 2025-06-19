@@ -19,6 +19,7 @@ html, body {
   font-family: 'Georgia', serif;
   text-align: center;
   border-bottom: none;
+  z-index: 2000;
 }
 
 .logo {
@@ -196,6 +197,7 @@ main {
   width: 100%;
   background: transparent; /* Ensure the gallery itself has no background */
   padding: 0 2rem;
+  position: relative; /* Contain absolute-positioned elements */
 }
 
 .gallery .flickity-slider {
@@ -392,6 +394,7 @@ main {
 
   .gallery {
     padding: 0 1rem;
+    position: relative; /* Ensure controls stay within gallery */
   }
 
   .gallery img {
