@@ -189,7 +189,7 @@ main {
   align-items: center;
   margin: 1.5rem 0; /* Reduced top and bottom margin */
   background: transparent; /* Ensure the background is transparent */
-  max-height: 75vh; /* Limit gallery height */
+  max-height: 66vh; /* Limit gallery height to two-thirds of viewport */
 }
 
 .gallery {
@@ -213,7 +213,7 @@ main {
   width: 100%; /* Ensure the image fills the gallery cell */
   height: auto;
   max-width: 100%;
-  max-height: 75vh; /* Prevent images from exceeding 3/4 viewport height */
+  max-height: 66vh; /* Prevent images from exceeding two-thirds viewport height */
   display: block;
   object-fit: contain;
   margin: 0 auto;
