@@ -8,7 +8,6 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flickity@2/dist/flickity.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/flickity@2/dist/flickity.pkgd.min.js"></script>
-  <script src="/js/burger.js"></script>
 </head>
 <body>
   {% include "header.njk" %}
@@ -21,9 +20,9 @@
           "pageDots": true, 
           "cellAlign": "center", 
           "contain": false, 
-          "imagesLoaded": true, 
-          "groupCells": false, 
-          "selectedAttraction": 0.075, 
+          "imagesLoaded": true,
+          "groupCells": false,
+          "selectedAttraction": 0.075,
           "friction": 0.9 {% if gallery.length > 1 %},
           "prevNextButtons": true{% else %},
           "prevNextButtons": false{% endif %}

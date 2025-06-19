@@ -19,6 +19,7 @@ html, body {
   font-family: 'Georgia', serif;
   text-align: center;
   border-bottom: none;
+  z-index: 2000;
 }
 
 .logo {
@@ -183,21 +184,20 @@ main {
 
 /* === GALLERY === */
 .gallery-container {
-  max-height: 50vh;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
-  margin: 1.5rem 0 1.5rem 0; /* Reduced top and bottom margin */
+  margin: 1.5rem 0; /* Reduced top and bottom margin */
   background: transparent; /* Ensure the background is transparent */
+  max-height: 66vh; /* Limit gallery height to two-thirds of viewport */
 }
 
 .gallery {
   width: 100%;
   background: transparent; /* Ensure the gallery itself has no background */
   padding: 0 2rem;
-  overflow: hidden; /* Hide any overflow from adjacent images */
+  position: relative; /* Contain absolute-positioned elements */
 }
 
 .gallery .flickity-slider {
@@ -212,10 +212,10 @@ main {
 }
 
 .gallery img {
-  max-height: 60vh;
   width: 100%; /* Ensure the image fills the gallery cell */
   height: auto;
   max-width: 100%;
+  max-height: 66vh; /* Prevent images from exceeding two-thirds viewport height */
   display: block;
   object-fit: contain;
   margin: 0 auto;
@@ -239,11 +239,24 @@ main {
   height: 44px;
   opacity: 0;
   transition: opacity 0.3s ease;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
+}
+
+.flickity-prev-next-button.previous {
+  left: 10px;
+}
+
+.flickity-prev-next-button.next {
+  right: 10px;
 }
 
 .gallery:hover .flickity-prev-next-button {
   opacity: 1;
 }
+
 
 /* === DISTORTION IMAGE === */
 .distorted {
@@ -381,6 +394,7 @@ main {
 
   .gallery {
     padding: 0 1rem;
+    position: relative; /* Ensure controls stay within gallery */
   }
 
   .gallery img {
