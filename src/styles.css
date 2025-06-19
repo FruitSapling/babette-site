@@ -307,6 +307,10 @@ main {
   color: #fff;
 }
 
+body.gallery-fullscreen .worm {
+  display: none;
+}
+
 
 /* === DISTORTION IMAGE === */
 .distorted {

@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   containers.forEach(container => {
     const galleryElem = container.querySelector('.js-flickity');
+    const exitBtn = container.querySelector('.exit-fullscreen');
     const dataAttr = galleryElem.getAttribute('data-flickity');
     let flkty = Flickity.data(galleryElem);
     if (!flkty) {
@@ -21,6 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function enterFullscreen() {
       container.classList.add('fullscreen');
+      document.body.classList.add('gallery-fullscreen');
       document.addEventListener('keydown', escHandler);
       if (flkty) {
         flkty.resize();
@@ -29,15 +31,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function exitFullscreen() {
       container.classList.remove('fullscreen');
+      document.body.classList.remove('gallery-fullscreen');
       document.removeEventListener('keydown', escHandler);
       if (flkty) {
         flkty.resize();
       }
     }
 
+    if (exitBtn) {
+      exitBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        exitFullscreen();
+      });
+    }
+
     container.addEventListener('click', function(e) {
       if (container.classList.contains('fullscreen')) {
-        if (e.target === container || e.target.closest('.exit-fullscreen')) {
+        if (e.target === container) {
           exitFullscreen();
         }
       } else {
