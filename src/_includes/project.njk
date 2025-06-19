@@ -15,11 +15,11 @@
   <main>
     {% if gallery and gallery.length > 0 %}
       <div class="gallery-container">
-        <div class="gallery js-flickity" data-flickity='{ 
-          "wrapAround": true, 
-          "pageDots": true, 
-          "cellAlign": "center", 
-          "contain": false, 
+        <div class="gallery js-flickity" data-flickity='{
+          "wrapAround": true,
+          "pageDots": true,
+          "cellAlign": "center",
+          "contain": false,
           "imagesLoaded": true,
           "groupCells": false,
           "selectedAttraction": 0.075,
@@ -33,6 +33,7 @@
             </div>
           {% endfor %}
         </div>
+        <button class="exit-fullscreen" aria-label="Exit full screen">&times;</button>
       </div>
     {% endif %}
 
