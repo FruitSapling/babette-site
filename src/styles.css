@@ -183,13 +183,11 @@ main {
 
 /* === GALLERY === */
 .gallery-container {
-  max-height: 50vh;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
-  margin: 1.5rem 0 1.5rem 0; /* Reduced top and bottom margin */
+  margin: 1.5rem 0 1.5rem 0; /* Maintain whitespace around gallery */
   background: transparent; /* Ensure the background is transparent */
 }
 
@@ -213,7 +211,7 @@ main {
 
 .gallery img {
   max-height: 60vh;
-  width: 100%; /* Ensure the image fills the gallery cell */
+  width: auto;
   height: auto;
   max-width: 100%;
   display: block;
