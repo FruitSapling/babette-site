@@ -82,8 +82,8 @@ main {
 
 /* === WORK GRID === */
 .work-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 columns by default */
+  display: flex;
+  flex-direction: column; /* Stack projects vertically */
   gap: 2rem;
   margin-top: 2rem;
   max-width: 1000px;
@@ -96,7 +96,7 @@ main {
 
 @media (max-width: 1000px) {
   .work-grid {
-    grid-template-columns: 1fr; /* 1 column for projects on screens <1000px */
+    /* Maintain single column layout on smaller screens */
     max-width: 100%;
     padding: 0 6rem;
   }
