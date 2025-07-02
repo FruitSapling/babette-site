@@ -3,7 +3,7 @@ html, body {
   padding: 0;
   color: #3e2f24;
   background-color: #FFFFFF;
-  font-family: 'Georgia', sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 1rem;
   line-height: 1.6;
   overflow-x: hidden;
@@ -16,7 +16,7 @@ html, body {
   justify-content: center;
   align-items: center;
   padding: 2rem 0;
-  font-family: 'Georgia', serif;
+  font-family: inherit;
   text-align: center;
   border-bottom: none;
   z-index: 2000;
@@ -82,23 +82,23 @@ main {
 
 /* === WORK GRID === */
 .work-grid {
-  display: flex;
-  flex-direction: column; /* Stack projects vertically */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
-  margin-top: 2rem;
-  max-width: 1000px;
+  margin-top: 3rem;
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
   width: 100%;
   box-sizing: border-box;
-  padding: 0 1rem; /* Add horizontal padding for mobile */
+  padding: 0 1rem;
 }
 
 @media (max-width: 1000px) {
   .work-grid {
-    /* Maintain single column layout on smaller screens */
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     max-width: 100%;
-    padding: 0 6rem;
+    padding: 0 2rem;
   }
   main {
     padding: 2rem 0.5rem;
@@ -119,7 +119,8 @@ main {
 
 @media (max-width: 600px) {
   .work-grid {
-    padding: 0 .5rem;
+    grid-template-columns: 1fr;
+    padding: 0 1rem;
   }
 
   .hero,
@@ -136,6 +137,7 @@ main {
   text-decoration: none;
   color: inherit;
   padding: 1rem;
+  border: 1px solid #e0e0e0;
   transition: transform 0.3s ease; /* Smooth transition for hover effect */
   max-width: 100%;
   width: 100%;         /* Ensure card fills grid cell */
@@ -167,7 +169,7 @@ main {
   font-size: 1.1rem;
   font-weight: 600;    /* Medium weight between normal and bold */
   margin: 0 0 0.5rem 0;
-  text-align: right;
+  text-align: center;
 }
 
 .card p {
@@ -557,31 +559,35 @@ body.gallery-fullscreen .site-header {
 
 /* === HERO === */
 .hero {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 2rem 0;
-  background-color: transparent; /* Optional: Ensure no background color conflicts */
-  position: static !important;
-  z-index: auto !important;
+  padding: 0;
+  background-color: transparent;
 }
 
 .hero img {
   display: block;
   width: 100%;
   height: auto;
-  max-height: 80vh; /* Ensure the image doesn't exceed the viewport height */
-  position: static !important;
-  z-index: auto !important;
+  max-height: 80vh;
+  object-fit: cover;
 }
 
 .hero-text {
-  max-width: 700px;
-  margin: 1.5rem auto 0 auto;
-  font-size: 1.15rem;
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.85);
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  max-width: 600px;
+  font-size: 1.2rem;
   line-height: 1.6;
-  text-align: left;
+  text-align: center;
 }
 
 /* ─── smoother, slower wriggle + sniff phases ─── */
